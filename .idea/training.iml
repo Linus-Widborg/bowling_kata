@@ -13,9 +13,9 @@
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/BowlingResult.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Frame.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/BowlingResult.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/Round.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/Round.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Frame.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/testBowlingScore.cpp" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />

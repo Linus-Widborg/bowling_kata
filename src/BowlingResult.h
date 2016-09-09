@@ -3,19 +3,19 @@
 
 #include <vector>
 #include <stdexcept>
-#include "Round.h"
+#include "Frame.h"
 
 class BowlingResult {
 
 public:
-    int getScoreForRound(int round);
+    int getScoreForFrame(int number);
 
-    void addRound(Round round) throw(std::overflow_error);
+    void addFrame(Frame frame) throw(std::overflow_error);
 
     int totalScore();
 
 private:
-    std::vector<Round> rounds;
+    std::vector<Frame> frames;
 };
 
 

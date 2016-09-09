@@ -1,7 +1,7 @@
 #ifndef TRAINING_ROUND_H
 #define TRAINING_ROUND_H
 
-class Round {
+class Frame {
 
 public:
     void addFirstShot(int score);

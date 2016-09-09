@@ -1,30 +1,30 @@
 #include <iostream>
 #include "BowlingResult.h"
 
-int BowlingResult::getScoreForRound(int round) {
+int BowlingResult::getScoreForFrame(int number) {
     int score;
-    if (round > rounds.size()) {
+    if (number > frames.size()) {
         score = 0;
     } else {
-        score = rounds[round - 1].score();
+        score = frames[number - 1].score();
     }
     return score;
 }
 
-void BowlingResult::addRound(Round round) throw(std::overflow_error) {
-    if (rounds.size() >= 10) {
-        throw std::overflow_error("more then 10 rounds are not allowed");
+void BowlingResult::addFrame(Frame frame) throw(std::overflow_error) {
+    if (frames.size() >= 10) {
+        throw std::overflow_error("more then 10 frames are not allowed");
     }
-    rounds.push_back(round);
+    frames.push_back(frame);
 }
 
 int BowlingResult::totalScore() {
     int score;
     bool bonus;
-    for(Round round : rounds) {
-        score += round.score();
+    for(Frame frame : frames) {
+        score += frame.score();
         if (bonus) {
-            score += round.getFirstShot();
+            score += frame.getFirstShot();
             bonus = false;
         }
         if (score == 10) {
