@@ -1,22 +1,19 @@
-//
-// Created by liwid on 9/9/16.
-//
-
 #ifndef TRAINING_ROUND_H
 #define TRAINING_ROUND_H
-
 
 class Round {
 
 public:
-    void addFirst(int score);
+    void addFirstShot(int score);
 
-    void addSecond(int score);
+    void addSecondShot(int score);
 
     int score();
 
+    int getFirstShot();
+
 private:
-    int second;
+    int secondShot;
     int first;
 };
 

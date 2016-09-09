@@ -4,14 +4,18 @@
 
 #include "Round.h"
 
-void Round::addFirst(int score) {
+void Round::addFirstShot(int score) {
     first = score;
 }
 
-void Round::addSecond(int score) {
-    second = score;
+void Round::addSecondShot(int score) {
+    secondShot = score;
 }
 
 int Round::score() {
-    return first + second;
+    return first + secondShot;
+}
+
+int Round::getFirstShot() {
+    return first;
 }

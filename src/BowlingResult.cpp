@@ -20,8 +20,16 @@ void BowlingResult::addRound(Round round) throw(std::overflow_error) {
 
 int BowlingResult::totalScore() {
     int score;
+    bool bonus;
     for(Round round : rounds) {
         score += round.score();
+        if (bonus) {
+            score += round.getFirstShot();
+            bonus = false;
+        }
+        if (score == 10) {
+            bonus = true;
+        }
     }
     return score;
 }
