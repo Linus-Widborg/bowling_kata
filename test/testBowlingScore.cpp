@@ -78,6 +78,19 @@ TEST(test_bowling_score, calculate_the_total_score_with_two_spare_in_a_row) {
     EXPECT_EQ((10 + 3) + (10 + 3) + 7, score);
 }
 
+TEST(test_bowling_score, calculate_the_total_score_with_one_strike) {
+    BowlingResult bowlingResult;
+    Frame frame1;
+    frame1.addFirstShot(10);
+    frame1.addSecondShot(0);
+    bowlingResult.addFrame(frame1);
+    Frame frame2;
+    frame2.addFirstShot(3);
+    frame2.addSecondShot(6);
+    bowlingResult.addFrame(frame2);
+    int score = bowlingResult.totalScore();
+    EXPECT_EQ((10 + 3 + 6) + 9, score);
+}
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
