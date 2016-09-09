@@ -72,10 +72,10 @@ TEST(test_bowling_score, calculate_the_total_score_with_two_spare_in_a_row) {
     bowlingResult.addFrame(frame2);
     Frame frame3;
     frame3.addFirstShot(3);
-    frame3.addSecondShot(7);
+    frame3.addSecondShot(4);
     bowlingResult.addFrame(frame3);
     int score = bowlingResult.totalScore();
-    EXPECT_EQ((10 + 3) + (10 + 3) + 7, score);
+    EXPECT_EQ((3 + 7 + 3) + (3 + 7 + 3) + (3 + 4), score);
 }
 
 TEST(test_bowling_score, calculate_the_total_score_with_one_strike) {
@@ -89,8 +89,28 @@ TEST(test_bowling_score, calculate_the_total_score_with_one_strike) {
     frame2.addSecondShot(6);
     bowlingResult.addFrame(frame2);
     int score = bowlingResult.totalScore();
-    EXPECT_EQ((10 + 3 + 6) + 9, score);
+    EXPECT_EQ((10 + 3 + 6) + (3 + 6), score);
 }
+
+
+TEST(test_bowling_score, calculate_the_total_score_with_one_strike_and_a_spare) {
+    BowlingResult bowlingResult;
+    Frame frame1;
+    frame1.addFirstShot(10);
+    frame1.addSecondShot(0);
+    bowlingResult.addFrame(frame1);
+    Frame frame2;
+    frame2.addFirstShot(3);
+    frame2.addSecondShot(7);
+    bowlingResult.addFrame(frame2);
+    Frame frame3;
+    frame3.addFirstShot(6);
+    frame3.addSecondShot(0);
+    bowlingResult.addFrame(frame3);
+    int score = bowlingResult.totalScore();
+    EXPECT_EQ((10 + 3 + 7) + (3 + 7 + 6) + 6, score);
+}
+
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();

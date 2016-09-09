@@ -19,7 +19,7 @@ void BowlingResult::addFrame(Frame frame) throw(std::overflow_error) {
 }
 
 int BowlingResult::totalScore() {
-    int score;
+    int score = 0;
     bool spare = false;
     bool strike = false;
     for(Frame frame : frames) {
@@ -27,13 +27,14 @@ int BowlingResult::totalScore() {
         if (spare) {
             score += frame.getFirstShot();
             spare = false;
-        } else if (strike) {
+        }
+        if (strike) {
             score += frame.score();
             strike = false;
         }
         if (frame.getFirstShot() == 10) {
             strike = true;
-        } else if (score == 10) {
+        } else if (frame.score() == 10) {
             spare = true;
         }
     }
